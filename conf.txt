@@ -1,0 +1,82 @@
+Дефолтная конфигурация для apache
+
+DefaultRuntimeDir ${APACHE_RUN_DIR}
+PidFile ${APACHE_PID_FILE}
+Timeout 300
+KeepAlive On
+MaxKeepAliveRequests 100
+KeepAliveTimeout 5
+User ${APACHE_RUN_USER}
+Group ${APACHE_RUN_GROUP}
+HostnameLookups Off
+ErrorLog ${APACHE_LOG_DIR}/error.log
+LogLevel warn
+IncludeOptional mods-enabled/*.load
+IncludeOptional mods-enabled/*.conf
+Include ports.conf
+<Directory />
+        Options FollowSymLinks
+        AllowOverride None
+        Require all denied
+</Directory>
+<Directory /usr/share>
+        AllowOverride None
+        Require all granted
+</Directory>
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+</Directory>
+AccessFileName .htaccess
+<FilesMatch "^\.ht">
+        Require all denied
+</FilesMatch>
+LogFormat "%v:%p %h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"" vhost_combined
+LogFormat "%h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"" combined
+LogFormat "%h %l %u %t \"%r\" %>s %O" common
+LogFormat "%{Referer}i -> %U" referer
+LogFormat "%{User-agent}i" agent
+IncludeOptional conf-enabled/*.conf
+IncludeOptional sites-enabled/*.conf
+
+
+Конфигурация для виртуальных хостов apache2
+
+<VirtualHost *:80>
+    ServerName first_domain.ru
+    ServerAlias www.first_domain.ru
+    ServerAdmin webmaster@first_domain.ru
+    DocumentRoot /var/www/first_domain/
+    <Directory /var/www/first_domain/>
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/example.com-error.log
+    CustomLog ${APACHE_LOG_DIR}/example.com-access.log combined
+</VirtualHost>
+
+
+Конфигурация для dnsmasq 
+
+listen-address=::1
+listen-address=127.0.0.1
+listen-address=192.168.1.11
+bind-interfaces
+server=8.8.4.4
+server=8.8.8.8
+cache-size=5000
+address=/example.org/192.168.1.25
+
+
+Конфигурация для dhcpd.conf
+
+default-lease-time 600;
+max-lease-time 7200;
+ddns-update-style none;
+subnet 192.168.1.0 netmask 255.255.255.0 {
+  range 192.168.1.230 192.168.1.240;
+  option domain-name "localhome.org";
+  option routers 192.168.1.1;
+  option broadcast-address 192.168.1.255;
+}
