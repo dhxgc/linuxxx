@@ -1,17 +1,15 @@
-sudo apt install exuberant-ctags
-sudo apt install neovim
+sudo apt install exuberant-ctags neovim -y
 
 #for root
 
 #Install VimPlug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+#sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+#       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-sudo mkdir -p /root/.config; sudo mkdir -p /root/.config/nvim; sudo mkdir -p /root/.config/nvim/plugged;
-sudo touch --no-create /root/.config/nvim/init.vim
+#sudo mkdir -p /root/.config; sudo mkdir -p /root/.config/nvim; sudo mkdir -p /root/.config/nvim/plugged;
+#sudo touch --no-create /root/.config/nvim/init.vim
 
-cat ./nvim.sh >> /root/.config/nvim/init.vim
-
+#cat ./nvim.sh >> /root/.config/nvim/init.vim
 
 
 #Create dirs and config files
