@@ -1,5 +1,6 @@
 curl -sL https://deb.nodesource.com/setup_20.x | sudo bash -
 sudo apt install exuberant-ctags neovim nodejs -y
+sudo npm install -g npm@10.4.0
 
 #for root
 
