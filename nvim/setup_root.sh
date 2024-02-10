@@ -1,4 +1,5 @@
-sudo apt install exuberant-ctags neovim -y
+curl -sL https://deb.nodesource.com/setup_20.x | sudo bash -
+sudo apt install exuberant-ctags neovim nodejs -y
 
 #for root
 
