@@ -1,11 +1,17 @@
 
-inoremap jk <esc>
+inoremap jj <esc>
 
   nnoremap <C-c> "+y
   vnoremap <C-c> "+y
   nnoremap <C-p> "+p
   vnoremap <C-p> "+p
-  
+
+"Для табов
+  nnoremap <F2> :tabnew<CR>
+  vnoremap <F2> :tabnew<CR>
+  nnoremap <F3> :tabclose<CR> 
+  nnoremap <F4> :wq<CR>
+
   " this will install vim-plug if not installed
   if empty(glob('~/.config/nvim/autoload/plug.vim'))
       silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -26,6 +32,9 @@ inoremap jk <esc>
   :set smarttab
   :set softtabstop=4
   :set mouse=a
+  :set encoding=utf-8
+  :set noswapfile
+
   
   call plug#begin()
     Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
@@ -52,7 +61,8 @@ inoremap jk <esc>
 		  \'coc-html', 
 		  \'coc-json', 
 		  \'coc-prettier',
-		  \'coc-python'
+		  \'coc-python',
+		  \'coc-clangd'
 		\]  " list of CoC extensions needed
 
     Plug 'jiangmiao/auto-pairs' "this will auto close ( [ {
