@@ -1,7 +1,8 @@
 в самом нвиме прописать эту тему
-
-\t  :PlugInstall
-
+```vim
+:PlugInstall
+```
 ребутнуть нвим
-
-\t  :call coc#util#install()
+```vim
+:call coc#util#install()
+```
