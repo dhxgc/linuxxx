@@ -15,4 +15,4 @@ DISABLED=yes
 CONFIG_WIRELESS=no
 SYSTEMD_BOOTPROTO=static
 CONFIG_IPV4=yes
-SYSTEMD_CONTROLLED=no' >> /etc/net/ifaces/$interface_name/options
+SYSTEMD_CONTROLLED=no' > /etc/net/ifaces/$interface_name/options
