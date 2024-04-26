@@ -46,7 +46,7 @@ inoremap jj <esc>
     Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
     Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
     Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
-    "Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
+    Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
     
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'} " this is for auto complete, prettier and tslinting
   
