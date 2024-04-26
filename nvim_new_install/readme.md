@@ -1,7 +1,7 @@
 в самом нвиме прописать эту тему
 
-  :PlugInstall
+\t  :PlugInstall
 
 ребутнуть нвим
 
-  :call coc#util#install()
+\t  :call coc#util#install()
