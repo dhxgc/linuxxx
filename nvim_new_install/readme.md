@@ -8,3 +8,4 @@
 ```vim
 :call coc#util#install()
 ```
+5. Ребутнуть nvim
