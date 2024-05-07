@@ -113,7 +113,7 @@ DBUser=zabbix
 DBPassword=kk
 Timeout=4
 LogSlowQueries=3000
-StatsAllowedIP=127.0.0.1' > /etc/zabbix/zabbix_server.conf
+StatsAllowedIP=0.0.0.0/0' > /etc/zabbix/zabbix_server.conf
 
 systemctl enable --now zabbix_pgsql
 
