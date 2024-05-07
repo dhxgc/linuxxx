@@ -103,7 +103,7 @@ session.hash_bits_per_character = 5
 url_rewriter.tags = "a=href,area=href,frame=src,input=src,form=fakeentry"
 [Assertion]
 [COM]
-[sysvshm]' >> /etc/php/8.1/apache2-mod_php/php.ini
+[sysvshm]' > /etc/php/8.1/apache2-mod_php/php.ini
 
 cp /etc/zabbix/zabbix_server.conf{,.bkp}
 echo 'LogFile=/var/log/zabbix/zabbix_server.log
@@ -113,7 +113,7 @@ DBUser=zabbix
 DBPassword=kk
 Timeout=4
 LogSlowQueries=3000
-StatsAllowedIP=127.0.0.1' >> /etc/zabbix/zabbix_server.conf
+StatsAllowedIP=127.0.0.1' > /etc/zabbix/zabbix_server.conf
 
 systemctl enable --now zabbix_pgsql
 
