@@ -1,3 +1,5 @@
+#!/bin/bash
+
 read -p "Введите IP-адрес Zabbix-сервера: " server_ip
 read -p "Введите номер клиента Zabbix: " num_client
 
