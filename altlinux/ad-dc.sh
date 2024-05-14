@@ -12,4 +12,10 @@ rm -rf /var/lib/samba
 rm -rf /var/cache/samba
 mkdir -p /var/lib/samba/sysvol
 
-samba-tool domain 
+samba-tool domain provision
+systemctl --now enable samba.service
+
+cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
+echo -e "Нажмите любую клавишу для перезагрузки (или Ctrl+C)"
+read -n1 ans1
+reboot
