@@ -1,8 +1,8 @@
 !#/bin/bash
 
-apt-get install task-samba-dc
+apt-get install task-samba-dc -y
 apt-get update
-apt-get install task-samba-dc
+apt-get install task-samba-dc -y
 
 read -p $'Введите имя ПК (e.g: dc.alt.com): ' dmhostname
 hostnamectl hostname $dmhostname
