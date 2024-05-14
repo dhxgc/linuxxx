@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 apt-get install task-samba-dc -y
 apt-get update
