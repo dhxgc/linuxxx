@@ -9,12 +9,10 @@ foper=${input:-$DEFAULT_VALUE}
 #echo "В случае ошибок при установке "
 
 if [[ $foper == "admin" ]]; then
-        apt-get install alterator-auth alterator-gpupdate -y
-        apt-get install admx-basealt admx-yandex-browser admx-chromium admx-firefox admx-msi-setup -y
+        apt-get install admx-* admc gpui alterator-auth alterator-gpupdate -y
         apt-get update
-        apt-get install admx-basealt admx-yandex-browser admx-chromium admx-firefox admx-msi-setup -y
+        apt-get install admx-* admc gpui alterator-auth alterator-gpupdate -y
         admx-msi-setup
-        apt-get install admc gpui -y
         echo "Перед вводом в домен предварительно настройте DNS!"
 elif [[ $foper == "user" ]]; then
         apt-get install alterator-auth alterator-gpupdate -y
