@@ -1,18 +1,18 @@
-!#/bin/bash
+#!/bin/bash
 
 echo -e "Start CLI or GUI? [c/g]: "
 read yn
 
-if [ $yn = 'c' ]
+if [[ "$yn" = 'c' ]]
 then
-	sudo systemctl enable multi-user.target
-	sudo systemctl set-default multi-user.target
-	sudo reboot
-elif [ $yn = 'g' ]
+    systemctl enable multi-user.target
+    systemctl set-default multi-user.target
+    reboot
+elif [[ "$yn" = 'g' ]]
 then
-	sudo systemctl enable graphical.target
-	sudo systemctl set-default graphical.target
-	sudo reboot
+    systemctl enable graphical.target
+    systemctl set-default graphical.target
+    reboot
 else
-	echo -e "Unknown operation!"
+    echo -e "Unknown operation!"
 fi
